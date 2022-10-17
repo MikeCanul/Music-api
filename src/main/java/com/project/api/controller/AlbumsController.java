@@ -1,4 +1,4 @@
-package net.itinajero.api.controller;
+package com.project.api.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import net.itinajero.api.entity.Album;
-import net.itinajero.api.service.IAlbumsService;
+import com.project.api.entity.Album;
+import com.project.api.service.IAlbumsService;
 
 @RestController
 @RequestMapping("/api")
@@ -25,21 +25,22 @@ public class AlbumsController {
 		return serviceAlbums.buscarTodos();
 	}
 	
-	//@PostMapping("/albums") 
-	//public Album guardar(@RequestBody Album album) {
-	//	serviceAlbums.guardar(album);
-	//	return album;
-	//}//
+	@PostMapping("/albums")
+	public Album guardar(@RequestBody Album album) {
+		serviceAlbums.guardar(album);
+		return album;
+	}
 	
-	//@PutMapping("/albums")
-	//public Album modificar(@RequestBody Album album) {
-	//	serviceAlbums.guardar(album);
-	//	return album;
-	//} 
+	@PutMapping("/albums")
+	public Album modificar(@RequestBody Album album) {
+		serviceAlbums.guardar(album);
+		return album;
+	} 	
 	
-	//@DeleteMapping("/albums/{id}")
-	//public String eliminar(@PathVariable("id") int idAlbum) {
-	//	serviceAlbums.eliminar(idAlbum);
-	//	return "Registro Eliminado";
-	//}
+	@DeleteMapping("/albums/{id}")
+	public String eliminar(@PathVariable("id") int idAlbum) {
+		serviceAlbums.eliminar(idAlbum);
+		return "Registro eliminado";
+	}
+
 }

@@ -1,10 +1,9 @@
-package net.itinajero.api.repository;
+package com.project.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import net.itinajero.api.entity.Album;
+import com.project.api.entity.Album;
 
 public interface AlbumsRepository extends JpaRepository<Album, Integer> {
 
-	
 }
